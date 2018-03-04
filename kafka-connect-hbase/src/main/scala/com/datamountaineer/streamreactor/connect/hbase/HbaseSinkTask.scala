@@ -40,7 +40,7 @@ class HbaseSinkTask extends SinkTask with StrictLogging {
   var writer: Option[HbaseWriter] = None
   private val progressCounter = new ProgressCounter
   private var enableProgress: Boolean = false
-  private val manifest = JarManifest(getClass.getProtectionDomain.getCodeSource.getLocation)
+  private val manifest = JarManifest()
 
   /**
     * Parse the configurations and setup the writer

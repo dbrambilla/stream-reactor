@@ -97,7 +97,7 @@ class FtpSourcePoller(cfg: FtpSourceConfig, offsetStorage: OffsetStorageReader) 
 
 class FtpSourceTask extends SourceTask with StrictLogging {
   var poller: Option[FtpSourcePoller] = None
-  private val manifest = JarManifest(getClass.getProtectionDomain.getCodeSource.getLocation)
+  private val manifest = JarManifest()
 
   override def stop(): Unit = {
     logger.info("stop")

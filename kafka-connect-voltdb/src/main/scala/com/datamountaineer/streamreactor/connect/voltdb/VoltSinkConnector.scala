@@ -37,7 +37,7 @@ import scala.collection.JavaConverters._
 class VoltSinkConnector extends SinkConnector with StrictLogging {
   private val configDef = VoltSinkConfig.config
   private var configProps: Option[util.Map[String, String]] = None
-  private val manifest = JarManifest(getClass.getProtectionDomain.getCodeSource.getLocation)
+  private val manifest = JarManifest()
 
   /**
     * States which SinkTask class to use

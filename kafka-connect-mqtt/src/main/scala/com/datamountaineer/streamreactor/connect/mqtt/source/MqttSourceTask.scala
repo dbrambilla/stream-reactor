@@ -35,7 +35,7 @@ class MqttSourceTask extends SourceTask with StrictLogging {
   private val progressCounter = new ProgressCounter
   private var enableProgress: Boolean = false
   private var mqttManager: Option[MqttManager] = None
-  private val manifest = JarManifest(getClass.getProtectionDomain.getCodeSource.getLocation)
+  private val manifest = JarManifest()
 
   override def start(props: util.Map[String, String]): Unit = {
 

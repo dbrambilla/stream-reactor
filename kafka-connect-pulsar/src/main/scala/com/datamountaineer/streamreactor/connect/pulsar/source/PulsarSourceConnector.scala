@@ -33,7 +33,7 @@ import scala.collection.JavaConversions._
 class PulsarSourceConnector extends SourceConnector with StrictLogging {
   private val configDef = PulsarSourceConfig.config
   private var configProps: util.Map[String, String] = _
-  private val manifest = JarManifest(getClass.getProtectionDomain.getCodeSource.getLocation)
+  private val manifest = JarManifest()
 
   /**
     * States which SinkTask class to use

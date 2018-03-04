@@ -36,7 +36,7 @@ class KuduSinkTask extends SinkTask with StrictLogging {
   private val progressCounter = new ProgressCounter
   private var enableProgress: Boolean = false
   private var writer: Option[KuduWriter] = None
-  private val manifest = JarManifest(getClass.getProtectionDomain.getCodeSource.getLocation)
+  private val manifest = JarManifest()
 
   /**
     * Parse the configurations and setup the writer

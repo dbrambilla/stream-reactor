@@ -32,7 +32,7 @@ import scala.collection.JavaConversions._
 class PulsarSinkConnector extends SinkConnector with StrictLogging {
   private val configDef = PulsarSinkConfig.config
   private var configProps: Option[util.Map[String, String]] = None
-  private val manifest = JarManifest(getClass.getProtectionDomain.getCodeSource.getLocation)
+  private val manifest = JarManifest()
 
   override def start(props: util.Map[String, String]): Unit = {
     logger.info(s"Starting Pulsar sink connector.")
